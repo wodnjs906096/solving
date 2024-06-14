@@ -7,7 +7,7 @@ public class boj2805 {
     StringTokenizer st = new StringTokenizer(br.readLine());
 
     int Tree_cnt = Integer.parseInt(st.nextToken());
-    int Need_leg = Integer.parseInt(st.nextToken());
+    int Need_len = Integer.parseInt(st.nextToken());
     
     int[] Tree = new int[Tree_cnt];
 
@@ -20,7 +20,7 @@ public class boj2805 {
     
     int left = 0;
     int right = Tree[Tree.length - 1];
-    int min_height = 0;
+    int max_height = 0;
 
     while (left <= right) {
       int mid = (right + left) / 2;
@@ -31,9 +31,9 @@ public class boj2805 {
         sum += (Tree[i] - mid);
       }
       // 자른 나무 길이 합이 필요 길이보다 많다 = 절단기의 높이를 높여야 한다.
-      if (sum >= Need_leg) {
+      if (sum >= Need_len) {
         left = mid + 1;
-        min_height = mid;
+        max_height = mid;
       }
       // 자른 나무 길이 합이 필요 길이보다 적다 = 절단기의 높이를 낮춰야 한다.
       else {
@@ -41,6 +41,6 @@ public class boj2805 {
       } 
     }
     
-    System.out.println(min_height);
+    System.out.println(max_height);
   }
 }
