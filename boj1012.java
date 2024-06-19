@@ -6,7 +6,6 @@ public class boj1012 {
   static int Y[] = {1, -1, 0, 0};
   static int field[][];
   static int visited[][];
-  static int MAX = 60;
   
   public static void main(String[] args) throws IOException{
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
